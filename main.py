@@ -108,7 +108,9 @@ for wavelength_nm, weight in zip(wavelengths, weights):
 
     phi = 2 * np.pi * delta / wavelength
 
-    intensity = I0 * np.sin(phi / 2) ** 2
+    phi += np.pi
+
+    intensity = I0 * np.cos(phi / 2) ** 2
 
     rgb = wavelength_to_rgb(wavelength_nm)
 
